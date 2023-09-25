@@ -1,4 +1,5 @@
 const main = document.querySelector(".main");
+const button = document.querySelector("button");
 
 function createGrid(rows, columns){
 
@@ -17,33 +18,47 @@ function createGrid(rows, columns){
 
         }
     }
-
 }
 
-createGrid(16, 16);
+button.addEventListener("click", ()=>{
 
-var gridDivs = document.querySelectorAll(".flex-row div");
+    let gridSize = prompt("Default Layout - 16 x 16 | Max: 100", "16");
+    console.log(gridSize);
 
-var randomR = 255;
-var randomG = 255;
-var randomB = 255;
+    if(gridSize <= 100){
+        createGrid(gridSize, gridSize);
+    }
 
-for(var i=0; i<gridDivs.length; i++){
+    var radio1 = document.getElementById("colorScheme1");
+    var gridDivs = document.querySelectorAll(".flex-row div");
 
-    gridDivs[i].addEventListener("mouseover", (event)=>{
+    var randomR = 255;
+    var randomG = 255;
+    var randomB = 255;
 
-        // var randomR = Math.random() * ((255 - 0) + 0); // Math.random() * (max - min) + min;
-        // var randomG = Math.random() * ((255 - 0) + 0);
-        // var randomB = Math.random() * ((255 - 0) + 0);
+    for(var i=0; i<gridDivs.length; i++){
 
-        console.log(event.target);
-        // event.target.style.backgroundColor = "rgba(" + randomR + "," + randomG + "," + randomB + ")";
-    
-        event.target.style.backgroundColor = "rgba(" + randomR + "," + randomG + "," + randomB + ")";
+        gridDivs[i].addEventListener("mouseover", (event)=>{
 
-        randomR = randomR * 90 / 100;
-        randomG = randomG * 90 / 100;
-        randomB = randomB * 90 / 100;
+            if(radio1.checked){
 
-    }, true);
-}
+                randomR = Math.random() * ((255 - 0) + 0); // Math.random() * (max - min) + min;
+                randomG = Math.random() * ((255 - 0) + 0);
+                randomB = Math.random() * ((255 - 0) + 0);
+
+                console.log(event.target);
+                event.target.style.backgroundColor = "rgba(" + randomR + "," + randomG + "," + randomB + ")";
+        
+            } else {
+
+                event.target.style.backgroundColor = "rgba(" + randomR + "," + randomG + "," + randomB + ")";
+
+                randomR = randomR * 90 / 100;
+                randomG = randomG * 90 / 100;
+                randomB = randomB * 90 / 100;
+            }
+
+        }, true);
+    }
+
+}, true);
