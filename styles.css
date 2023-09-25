@@ -1,20 +1,22 @@
 html{
 
-    margin: 5px;
-    border: 1px solid green;
+    /* margin: 5px; */
+    /* border: 1px solid green; */
 }
 
 body{
-    border: 1px solid red;
+
+    margin: 0;
+    /* border: 1px solid red; */
 }
 
 .flex-container{
 
-    margin: 5px;
-    border: 1px solid blue;
+    /* margin: 5px; */
+    /* border: 1px solid blue; */
 
     display: flex;
-
+    flex-direction: column;
 
     justify-content: center;
     align-items: center;
@@ -50,7 +52,36 @@ body{
 .content{
 
     border: 1px solid #F9DEC9;
+    background-color: #F8F0E5;
 
     padding: 50px;
-    margin: 5px;
+    margin: 50px;
+
+    width: 50%;
+    font-family: 'Farsan', cursive;
+}
+
+h1{
+    font-size: 2rem;
+    font-family: 'Delius Unicase', cursive;
+}
+
+button{
+
+    border: 1px solid #DAC0A3;
+    background-color: #F8F0E5;
+
+    padding: 5px 20px;
+
+    font-family: 'Farsan', cursive;
+    font-size: 1.1rem;
+}
+
+button:hover{
+    background-color: #F9DEC9;
+}
+
+input{
+
+    margin-left: 15px;
 }
