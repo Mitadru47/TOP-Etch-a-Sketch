@@ -1,0 +1,47 @@
+html{
+
+    margin: 5px;
+    border: 1px solid green;
+}
+
+body{
+    border: 1px solid red;
+}
+
+.flex-container{
+
+    margin: 5px;
+    border: 1px solid blue;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 5% 0;
+}
+
+.main{
+
+    /* border: 1px solid blueviolet; */
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+
+    /* margin: 5px; */
+    /* border: 1px solid peru; */
+
+    display: flex;
+}
+
+.flex-row div{
+
+    /* margin: 5px; */
+    border: 1px solid #F9DEC9;
+
+    height: 25px;
+    width: 25px;
+}
